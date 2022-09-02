@@ -93,7 +93,9 @@ const searchProduct = () => {
     })
 }
 
-const displayDetails = (title, image, description) => {    
+// display single product title and image in modal
+const displayDetails = (title, image, description) => {
+    // get modal title, image and description UI field for display dynamic content
     const productTitle = document.getElementById('product-title');
     const productImage = document.getElementById('product-image');
     const productDescription = document.getElementById('product-desc');
