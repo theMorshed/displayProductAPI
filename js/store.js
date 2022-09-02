@@ -30,7 +30,7 @@ const displaySingleProduct = (allProducts) => {
                 </h2>
                 <p>${description.length > 20 ? description.slice(0, 20) + '...' : description}</p>
                 <div class="card-actions justify-end mt-4">
-                    <div class="badge badge-outline cursor-default">Details</div>
+                    <label for="my-modal-3" class="badge badge-outline cursor-default modal-button" onclick="displayDetails('${title}', '${image}', '${description}')">Details</label>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@ const searchProduct = () => {
     const inputField = document.getElementById('input-search');
     inputField.addEventListener('keypress', async (event) => {
         productContainer.textContent = '';
-        progressBar.classList.remove('hidden');        
+        progressBar.classList.remove('hidden');
         if (event.key === 'Enter') {
             const searchValue = inputField.value;
             const allProducts = await loadAllProducts();
@@ -91,6 +91,15 @@ const searchProduct = () => {
             displaySingleProduct(matchedProducts);
         }
     })
+}
+
+const displayDetails = (title, image, description) => {    
+    const productTitle = document.getElementById('product-title');
+    const productImage = document.getElementById('product-image');
+    const productDescription = document.getElementById('product-desc');
+    productTitle.innerText = title;
+    productImage.innerHTML = `<img src="${image}" alt="">`;
+    productDescription.innerText = description;
 }
 
 displayInitialProduct();
