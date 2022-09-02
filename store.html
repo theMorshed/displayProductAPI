@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product store</title>
+    <!-- tailwind css and daisyui tailwind component library -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="search my-7 text-center px-28">
+        <input id="input-search" type="text" placeholder="Type here" class="input input-bordered input-primary w-1/2" />
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main>
+        <section class="product-section px-28">
+            <div class="flex gap-8">
+                <!-- left categories menu -->
+                <div class="flex-none w-48">
+                    <ul id="category-list">
+
+                    </ul>
+                </div>
+
+                <!-- right products section -->
+                <div class="grow">
+                    <!-- progress bar -->
+                    <section id="progress-bar" class="hidden">
+                        <progress class="progress progress-primary w-10/12"></progress>
+                    </section>
+                    <!-- product container -->
+                    <div id="product-container" class="flex flex-wrap flex-row gap-10">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main end -->
+
+    <!-- javascript file -->
+    <script src="js/store.js"></script>
+</body>
+
+</html>
